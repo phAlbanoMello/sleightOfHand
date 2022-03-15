@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!--Used for responsive behaviours-->
+
+	<!--Bootstrap CSS-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+		body{background-color: #122; color:#97e4f8; font-family: 'Roboto Condensed';}
+		.border{border: solid 0.5px #7bb; border-radius: 10px; }
+		.btn-custom-dark{background-color:#203535; border:none; float:left; width:90px; font-size:30px;list-style: none;  color:#97e4f8;}
+		.btn-custom-dark:hover{color:#6dd; box-shadow: 3px 3px rgba(0,0,0,0.5); border: solid 2px #203535; border-radius: 25px; text-decoration: none !important;}
+		.btn-custom-dark a{text-decoration: none !important; color:#97e4f8;}
+
+		.img-container{
+			max-height: 400px;
+			width:1000px;
+		    overflow: hidden;
+		    position: relative;
+		}
+		.img-holder{
+		    /*Insert background image through ID selector e.g #mainbanner*/
+		    transition: all 1s;
+		}
+		.img-holder:hover{
+			transform: scale(1.1);
+		}
+		.link-title{
+			width: 100%; height: 20%;
+			color:#97e4f8;;
+		    text-shadow: 1px 1px 1px #000000;
+		    font-size: 30px;
+		    font-family: "Roboto Condensed";
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    padding: 5px;
+		    text-decoration: none !important;
+		    background: url(images/black-box.png) center center no-repeat;
+		}
+		.link-subtitle{
+			width: 100%; height: 20%;
+			color:#97e4f8;
+		    text-shadow: 1px 1px 1px #000000;
+		    font-size: 20px;
+		    font-family: "Roboto Condensed";
+		    position: absolute;
+			top:35px;
+		    left: 0px;
+		    padding: 10px;
+		    text-decoration: none  !important;
+		}
+		.link-subtitle:hover{
+			color:#fff;
+		}
+		.cardshowcase{min-height: 400px;  overflow: hidden; position: relative; margin:20px; }
+		.decksuggest1{min-height: 300px; margin-top: 30px;}
+		.decksuggest2{min-height: 300px; margin-top: 50px;}
+		.bg-standard{background-color: #203535; box-shadow: 4px 4px rgba(0,0,0,0.5); border: solid 2px #203535; border-radius: 25px;}
+		.regionButton img{width: 60px; height: 60px; margin-top: 10px; margin-left: 10px; transition: all 3s;}
+		.regionButton:hover{
+			transform: scale(1.1);
+		}
+		#header{min-height: 280px;}
+		#navmenu{margin-top:20px; margin-bottom:15px;}
+		#body{height:700px; margin-top:30px;}
+		#homeTitle{color:#97e4f8; font-family: Merienda; text-align: center; padding:0px; margin-top:80px;}
+		#logo{min-width: 50px; max-width: 100%; border: solid 2px #97e4f8; border-radius: 180px; margin-top: 40px;}
+		#mainbanner{
+					min-width:100%;
+					height:100%;
+					background-image: url("https://drive.google.com/uc?export=view&id=azir_full.png");
+					background-position: center top; 
+					background-size: cover; 
+					background-repeat: 
+					no-repeat;}
+		#lissandrasc{
+					min-width:100%;
+					height:100%;
+					background: url(images/lissandra_full.png); 
+					background-position: 65% 50%; 
+					background-size: cover; 
+					background-repeat: 
+					no-repeat;
+					}
+		#kindredsc	{
+					min-width:100%;
+					height:100%;
+					background: url(images/kindred_full.png); 
+					background-position: 65% 50%; 
+					background-size: cover; 
+					background-repeat: 
+					no-repeat;
+					}
+		#renektonsc{
+					min-width:100%;
+					height:100%;
+					margin-right: 20px;
+					background: url(images/renekton_full.png); 
+					background-position: 65% 50%; 
+					background-size: cover; 
+					background-repeat: 
+					no-repeat;
+					transition: all 1s;
+					}
+		#taliyahsc	{
+					min-width:100%;
+					height:100%;
+					background: url(images/taliyah_full.png); 
+					background-position: 65% 50%; 
+					background-size: cover; 
+					background-repeat: 
+					no-repeat;
+					}
+		#lissandradeck{
+					background: url(images/decksuggestion_1.png); 
+					background-position: center center; 
+					background-size: cover; 
+					background-repeat: 
+					no-repeat;
+					}
+		#ascendeddeck{
+					background: url(images/decksuggestion_2.png); 
+					background-position: center center; 
+					background-size: cover; 
+					background-repeat: 
+					no-repeat;
+					}
+		#deckssugestions{min-height: 800px; position: absolute; margin-left: 610px; margin-top: 110px;}
+		#loginsubmitbutton{font-size: 18px; margin-left: 80px;}
+		#bottomcards{margin-top:35px; padding: 40px;}
+		#bottomrow{margin-top:20px;}
+		#sectionTitle{font-size:30px; font-family: Merienda; text-shadow: 3px 3px rgba(0,0,0,0.8)}
+		#decksuggestionTitle{font-size: 28px; font-family: "Roboto Condensed"; background-color: rgba(0,0,0,0.5); border-radius: 25px; margin-left: 0px; text-align: center; 	
+		min-width:100%; text-shadow: 3px 3px rgba(0,0,0,0.8)}
+		#regionselector{min-height: 80px; margin-top: 20px;}
+		input{background-color: #152525; border: solid 2px #203535; border-radius: 25px; color:#97e4f8;}
+		nav{position: relative; }
+
+	</style>
+
+	<title>Sleight Of Hand</title>
+</head>
+<body>
+	<div class="container">
+		<div id="header" class="row bg-standard border">
+			<div class="col-md-2"><img id="logo" alt="" src="images/logo.png"></div>
+			<div class="col-md-4" id="homeTitle">
+				<h1>Sleight Of Hand</h1>
+				<h5>Legends of Runeterra Guide</h5>
+			</div>
+			<div class="col-md-6">
+				<nav id="navmenu">
+					<ul class="nav justify-content-center">
+						<li class="nav-item"><a href="#" class="btn-custom-dark">Home</a></li>
+						<li class="nav-item"><a href="#" class="btn-custom-dark">Guide</a></li>
+						<li class="nav-item"><a href="#" class="btn-custom-dark">About</a></li>	
+					</ul>	
+				</nav>
+				<div class="col-md-5 offset-4">
+					<form action="post" method="get">
+						<label for="GET-login">Login :</label>
+						<input id="GET-login" type="text" name="login"><br>
+						<label for="GET-password">Password :</label>
+						<input id="GET-password" type="password" name="password">
+						<button id="loginsubmitbutton" type="submit" class="btn-custom-dark">Sign In</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div id="regionselector" class="col-md-6 offset-3 bg-standard border">
+			<div class="row justify-content-center">
+					<div class="regionButton"><a href="#"><img src="images/BW.svg" alt="Bilgewater Crest"></a></div>
+					<div class="regionButton"><a href="#"><img src="images/FR.svg" alt="Freljord Crest"></a></div>
+					<div class="regionButton"><a href="#"><img src="images/DE.svg" alt="Demacia Crest"></a></div>
+					<div class="regionButton"><a href="#"><img src="images/NX.svg" alt="Noxus Crest"></a></div>	
+					<div class="regionButton"><a href="#"><img src="images/IO.svg" alt="Ionia Crest"></a></div>	
+					<div class="regionButton"><a href="#"><img src="images/PZ.svg" alt="Piltover and Zaun Crest"></a></div>	
+					<div class="regionButton"><a href="#"><img src="images/SH.svg" alt="Shurima Crest"></a></div>
+					<div class="regionButton"><a href="#"><img src="images/SI.svg" alt="Shadow Islands Crest"></a></div>
+					<div class="regionButton"><a href="#"><img src="images/MT.svg" alt="Mount Targon Crest"></a></div>				
+			</div>
+		</div>
+	</div>
+	<div id="body" class="container img-container bg-standard border">
+		<div id="mainbanner" class="row img-holder">
+			</div>
+			<div>
+				<a class="link-title">The Emperor has arrived!</a><br>
+				<iframe src="https://drive.google.com/file/d/1UM7_i_usXgofYVTw5Z9NBDRg4Gc41R8H/preview" width="640" height="480" allow="autoplay"></iframe>
+				<a class="link-subtitle" href="#">Discover all the latest additions with the new expansion Empire of the Ascended</a>
+			</div>
+		</div>
+	<div id="bottomcards" class="container  bg-standard border">
+
+			<!--Deck suggestions area-->
+			<div id="deckssugestions" class="col-md-3 bg-standard border">
+				<div id="decksuggestionTitle" class="col-md-12">Choose one of the suggested decks and copy the Deck Code!</div>
+				<div id="lissandradeck" class="col-md-12 decksuggest1  img-holder bg-standard border"></div>
+				<div id="ascendeddeck" class="col-md-12 decksuggest2 img-holder bg-standard border"></div>
+			</div>
+			<!---->
+			<div class="row">
+				<div class="col-md-8" id="sectionTitle">Choose a champion to see related cards that came with the new expansion!</div>
+			</div>
+
+
+		<div class="row">
+			<div class="cardshowcase col-md-3 border bg-standard img-holder">
+				<div id="lissandrasc" class="row">	
+				</div>
+				<div>
+					<a class="link-title cscTitle">Lissandra</a>
+				</div>
+			</div>
+			<div class="cardshowcase col-md-3 border bg-standard img-holder">
+				<div id="kindredsc" class="row">	
+				</div>
+				<div>
+					<a class="link-title cscTitle">The Kindred</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+
+			<div class="cardshowcase col-md-3 border bg-standard img-holder">
+				<div id="renektonsc" class="row">	
+				</div>
+				<div>
+					<a class="link-title cscTitle">Renekton</a>
+				</div>
+			</div>
+
+			<div class="cardshowcase col-md-3 border bg-standard img-holder">
+				<div id="taliyahsc" class="row">	
+				</div>
+				<div>
+					<a class="link-title cscTitle">Taliyah</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<footer class="col-md-8 offset-2">
+			<nav>
+				<ul class="navbar-fixed-bottom nav nav-justified">
+					<li class="nav-item"><a href="#">Contact</a></li>
+					<li class="nav-item"><a href="#">Change Language</a></li>
+					<li class="nav-item"><a href="#">Terms and Conditions</a></li>
+					<li class="nav-item"><a href="#">Privacy Policy</a></li>
+					<li class="nav-item"><a href="#">Legal</a></li>
+				</ul>
+			</nav>
+			<div class="col-md-8 offset-3">All art content from this site belongs to Riot Games - Legends of Runeterra© Source : <a href="https://developer.riotgames.com/docs/lor">Riot Games Developer Portal</a></div>
+		</footer>		
+	</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">	
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+</script>
+<script>
+	$(document).ready(function(){
+
+	$('.img-container').mouseover(function(){
+
+	$(this).find('.img-holder').css('transform', 'scale(1.1)');
+	});
+
+    $('.img-container').mouseout(function(){
+        $(this).find('.img-holder').css('transform', 'scale(1)');
+    });
+});
+</script>
+</body>
+</html>
